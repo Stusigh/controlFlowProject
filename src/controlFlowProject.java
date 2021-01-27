@@ -20,20 +20,20 @@ public class controlFlowProject {
             System.out.println("What is the name of your favourite pet?");
             String userPetName = sc.nextLine();
 
+            System.out.println("What is the first name of your favourite actor");
+            String userFavActor = sc.nextLine();
+
+            System.out.println("Who's your favourite political leader?");
+            String userFavPolitical = sc.nextLine();
+
             System.out.println("How old are you?");
             int userAge = sc.nextInt();
 
             System.out.println("What is your lucky number?");
             int userLuckyNumber = sc.nextInt();
 
-            System.out.println("Who's your favourite political leader?");
-            String userFavPolitical = sc.nextLine();
-
             System.out.println("What is the two digit model number of your car?");
             int userMakeCarNumber = sc.nextInt();
-
-            System.out.println("What is the first name of your favourite actor");
-            String userFavActor = sc.nextLine();
 
             System.out.println("Enter a number between 1 and 50");
             int userRandomNumber = sc.nextInt();
@@ -47,7 +47,7 @@ public class controlFlowProject {
             int lotteryNumberFour = userRandomNumber + 15;
             int lotteryNumberFive = userFavPolitical.charAt(1)-65;
 
-            System.out.println("Lottery numbers: "+ lotteryNumberOne + lotteryNumberTwo + lotteryNumberThree + lotteryNumberFour+ lotteryNumberFive );
+            System.out.println("Lottery numbers: "+ lotteryNumberOne + ' ' + lotteryNumberTwo + ' ' + lotteryNumberThree + ' ' + lotteryNumberFour + ' ' + lotteryNumberFive + " Magic Ball: "  + magicBall);
 
 
 
