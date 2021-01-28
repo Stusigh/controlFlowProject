@@ -9,42 +9,6 @@ First, create a simple Java project that prints "Hello World".  This will verify
 
 #### Project Steps
 The first step in the project is to create a separate class that will print valid characters to the user.  This will be a simple utility class that is called from the `main()` method to print valid character sets to the user.  The skeleton of the class should resemble the following:
-```java
-public class AsciiChars 
-{
-  public static void printNumbers()
-  {
-    // TODO: print valid numeric input
-  }
-
-  public static void printLowerCase()
-  {
-    // TODO: print valid lowercase alphabetic input
-  }
-
-  public static void printUpperCase()
-  {
-    // TODO: print valid uppercase alphabetic input
-  }
-}
-```
-Using an ACSII chart, find the range of values for each of the different characters sets above - numbers, lower case letters, and upper case letters.  Then using a `for` loop, print the valid values in each set. Note that since these are `static` methods they can be called from within the `main()` method as follows:
-```java
-// print the valid characters for input
-AsciiChars.printNumbers();
-AsciiChars.printUpperCaseLetters();
-AsciiChars.printLowerCaseLetters();
-```
-
-Next, set up a simple interaction with the user.  After printing the valid characters, ask the question `Please enter your name: `.  When the user inputs their name, simply respond to them by echoing back `Hello Tom` (if they input Tom of course). See more detailed instructions below on reading input from the keyboard.
-
-#### Scanner class
-To read input from the console, one of the easiest ways is to use the framework class `Scanner`. More details and explanations of several different methods exist on the official documentation site, but a simple example to read a string input is:
-```java
-Scanner scanner = new Scanner(System.in);
-System.out.print("Enter a string: ");     // type a word and hit enter
-String someString = scanner.next();
-```
 
 Implement the following:  
 

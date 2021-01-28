@@ -1,4 +1,4 @@
-public class AsciiChars {
+public class asciiChars {
     public static void printNumbers()
     {
         // TODO: print valid numeric input
