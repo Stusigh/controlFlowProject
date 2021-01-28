@@ -30,49 +30,84 @@ public class controlFlowProject {
                 System.out.println("What is the first name of your favourite actor?");
                 userInputStrings.add(sc.nextLine());
 
-                System.out.println("What's the last name of your favourite political leader?");
-                userInputStrings.add(sc.nextLine());
+
 
                 while(true) {
-                    System.out.println("How old are you?");
-                    userInputNumbers.add(sc.nextInt());
-                    boolean truthCondition = inputValidator.numberValidator(userInputNumbers.get(0), 1, 99);
+                    System.out.println("Do you have a favorite quarterback?");
+                    String userInput = sc.next();
+                    if (!(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"))) {
+                        userInputNumbers.add(1);
+                        break;
+                    } else {
+                        System.out.println("What is their jersey number?");
+                        Integer nextUserInput = sc.nextInt();
+                        boolean truthCondition = inputValidator.numberValidator(nextUserInput, 1, 99);
+                        if (truthCondition) {
+                            userInputNumbers.add(nextUserInput);
+                            break;
+                        }
+                    }
+                }
+
+                while(true) {
+                    System.out.println("What is the age of your favourite pet, in years?");
+                    Integer userInput = sc.nextInt();
+                    boolean truthCondition = inputValidator.numberValidator(userInput, 1, 100);
                     if(truthCondition) {
+                        userInputNumbers.add(userInput);
                         break;
                     }
                 }
 
                 while(true) {
                     System.out.println("What is your lucky number between 1 and 100?");
-                    userInputNumbers.add(sc.nextInt());
-                    boolean truthCondition = inputValidator.numberValidator(userInputNumbers.get(1), 1, 100);
+                    Integer userInput = sc.nextInt();
+                    boolean truthCondition = inputValidator.numberValidator(userInput, 1, 100);
                     if(truthCondition) {
+                        userInputNumbers.add(userInput);
                         break;
                     }
                 }
-
-                System.out.println("What is the two digit model number of your car?");
-                userInputNumbers.add(sc.nextInt());
+                while(true) {
+                    System.out.println("What is the two digit model number of your car?");
+                    Integer userInput = sc.nextInt();
+                    boolean truthCondition = inputValidator.numberValidator(userInput, 0, 99);
+                    if(truthCondition) {
+                        userInputNumbers.add(userInput);
+                        break;
+                    }
+                }
 
                 while(true) {
-                    System.out.println("Enter a number between 0 and 50");
-                    userInputNumbers.add(sc.nextInt());
-                    boolean truthCondition = inputValidator.numberValidator(userInputNumbers.get(3), 0, 50);
+                    System.out.println("Enter a random number between 1 and 50");
+                    Integer userInput = sc.nextInt();
+                    boolean truthCondition = inputValidator.numberValidator(userInput, 1, 50);
                     if(truthCondition) {
+                        userInputNumbers.add(userInput);
                         break;
                     }
                 }
 
 
-                int randomInt = (int) (Math.random()*10);
+                int randomInt = (int) (Math.random()*5);
                 int randomIntTwo = (int) (Math.random()*10);
+                int randomIntThree = (int) (Math.random()*20);
 
-                int magicBall = (randomInt * userInputNumbers.get(1))/randomIntTwo;
+                int magicBall = randomInt * userInputNumbers.get(2);
+                if(magicBall >75) {
+                    magicBall = magicBall - 75;
+                }
                 int lotteryNumberOne = userInputStrings.get(0).charAt(2) - 65;
-                int lotteryNumberTwo = (((userInputNumbers.get(2) + userInputNumbers.get(1)))/randomInt)/userInputStrings.get(1).charAt(1);
-                int lotteryNumberThree = (42 * randomInt)/randomIntTwo;
+
+                int lotteryNumberTwo = userInputNumbers.get(4) - randomInt;
+                if(lotteryNumberTwo <0) {
+                    lotteryNumberTwo = userInputNumbers.get(5);
+                }
+                int lotteryNumberThree = (42);
+
                 int lotteryNumberFour = userInputNumbers.get(3) + 15;
-                int lotteryNumberFive = userInputStrings.get(2).charAt(1) - 65;
+
+                int lotteryNumberFive = userInputStrings.get(1).charAt(1) - 65;
 
                 System.out.println("Lottery numbers: " + lotteryNumberOne + ", " + lotteryNumberTwo + ", " + lotteryNumberThree + ", " + lotteryNumberFour + ", " + lotteryNumberFive + " Magic Ball: " + magicBall);
                 sc = new Scanner(System.in);
