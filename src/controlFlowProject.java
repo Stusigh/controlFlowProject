@@ -9,6 +9,7 @@ public class controlFlowProject {
         asciiChars.printNumbers();
         asciiChars.printLowerCase();
         asciiChars.printUpperCase();
+        System.out.println("\n");
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your name: ");
         String userName = sc.nextLine();
@@ -23,14 +24,21 @@ public class controlFlowProject {
                 String userPetName = sc.nextLine();
 
 
-                System.out.println("What is the first name of your favourite actor");
+                System.out.println("What is the first name of your favourite actor?");
                 String userFavActor = sc.nextLine();
 
                 System.out.println("Who's your favourite political leader?");
                 String userFavPolitical = sc.nextLine();
 
-                System.out.println("How old are you?");
-                int userAge = sc.nextInt();
+                int userAge;
+                while(true) {
+                    System.out.println("How old are you?");
+                    userAge = sc.nextInt();
+                    boolean truthCondition = inputValidator.numberValidator(userAge, 1, 99);
+                    if(truthCondition) {
+                        break;
+                    }
+                }
 
                 System.out.println("What is your lucky number?");
                 int userLuckyNumber = sc.nextInt();
@@ -39,7 +47,6 @@ public class controlFlowProject {
                 int userMakeCarNumber = sc.nextInt();
 
                 int userRandomNumber;
-
                 while(true) {
                     System.out.println("Enter a number between 0 and 50");
                     userRandomNumber = sc.nextInt();
@@ -63,6 +70,7 @@ public class controlFlowProject {
                 System.out.println("Would you like to answer these questions again to generate more numbers? Yes or No.");
                 quitOrNot = sc.nextLine();
                 if (!(quitOrNot.equals("Yes") || quitOrNot.equals("yes") || quitOrNot.equals("y") || quitOrNot.equals("Y"))) {
+                    sc.close();
                     System.exit(0);}
 
             }
