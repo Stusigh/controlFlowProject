@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 import java.lang.Math;
 
 public class controlFlowProject {
@@ -20,51 +20,59 @@ public class controlFlowProject {
             System.exit(0);}
         else {
             while(true) {
+                ArrayList<Integer> userInputNumbers = new ArrayList<>(4);
+                ArrayList<String> userInputStrings = new ArrayList<>(3);
+
                 System.out.println("What is the name of your favourite pet?");
-                String userPetName = sc.nextLine();
+                userInputStrings.add(sc.nextLine());
 
 
                 System.out.println("What is the first name of your favourite actor?");
-                String userFavActor = sc.nextLine();
+                userInputStrings.add(sc.nextLine());
 
                 System.out.println("What's the last name of your favourite political leader?");
-                String userFavPolitical = sc.nextLine();
+                userInputStrings.add(sc.nextLine());
 
-                int userAge;
                 while(true) {
                     System.out.println("How old are you?");
-                    userAge = sc.nextInt();
-                    boolean truthCondition = inputValidator.numberValidator(userAge, 1, 99);
+                    userInputNumbers.add(sc.nextInt());
+                    boolean truthCondition = inputValidator.numberValidator(userInputNumbers.get(0), 1, 99);
                     if(truthCondition) {
                         break;
                     }
                 }
 
-                System.out.println("What is your lucky number between 1 and 100?");
-                int userLuckyNumber = sc.nextInt();
+                while(true) {
+                    System.out.println("What is your lucky number between 1 and 100?");
+                    userInputNumbers.add(sc.nextInt());
+                    boolean truthCondition = inputValidator.numberValidator(userInputNumbers.get(1), 1, 100);
+                    if(truthCondition) {
+                        break;
+                    }
+                }
 
                 System.out.println("What is the two digit model number of your car?");
-                int userMakeCarNumber = sc.nextInt();
+                userInputNumbers.add(sc.nextInt());
 
-                int userRandomNumber;
                 while(true) {
                     System.out.println("Enter a number between 0 and 50");
-                    userRandomNumber = sc.nextInt();
-                    boolean truthCondition = inputValidator.numberValidator(userRandomNumber, 0, 50);
+                    userInputNumbers.add(sc.nextInt());
+                    boolean truthCondition = inputValidator.numberValidator(userInputNumbers.get(3), 0, 50);
                     if(truthCondition) {
                         break;
                     }
                 }
+
 
                 int randomInt = (int) (Math.random()*10);
                 int randomIntTwo = (int) (Math.random()*10);
 
-                int magicBall = (randomInt * userLuckyNumber)/randomIntTwo;
-                int lotteryNumberOne = userPetName.charAt(2) - 65;
-                int lotteryNumberTwo = (((userMakeCarNumber + userLuckyNumber))/randomInt)/userFavActor.charAt(1);
+                int magicBall = (randomInt * userInputNumbers.get(1))/randomIntTwo;
+                int lotteryNumberOne = userInputStrings.get(0).charAt(2) - 65;
+                int lotteryNumberTwo = (((userInputNumbers.get(2) + userInputNumbers.get(1)))/randomInt)/userInputStrings.get(1).charAt(1);
                 int lotteryNumberThree = (42 * randomInt)/randomIntTwo;
-                int lotteryNumberFour = userRandomNumber + 15;
-                int lotteryNumberFive = userFavPolitical.charAt(1) - 65;
+                int lotteryNumberFour = userInputNumbers.get(3) + 15;
+                int lotteryNumberFive = userInputStrings.get(2).charAt(1) - 65;
 
                 System.out.println("Lottery numbers: " + lotteryNumberOne + ", " + lotteryNumberTwo + ", " + lotteryNumberThree + ", " + lotteryNumberFour + ", " + lotteryNumberFive + " Magic Ball: " + magicBall);
                 sc = new Scanner(System.in);
