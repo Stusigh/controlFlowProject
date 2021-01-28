@@ -22,6 +22,7 @@ public class controlFlowProject {
                 System.out.println("What is the name of your favourite pet?");
                 String userPetName = sc.nextLine();
 
+
                 System.out.println("What is the first name of your favourite actor");
                 String userFavActor = sc.nextLine();
 
@@ -37,9 +38,16 @@ public class controlFlowProject {
                 System.out.println("What is the two digit model number of your car?");
                 int userMakeCarNumber = sc.nextInt();
 
-                System.out.println("Enter a number between 1 and 50");
-                int userRandomNumber = sc.nextInt();
-                System.out.println(inputValidator.numberValidator(userRandomNumber, 0, 50));
+                int userRandomNumber;
+
+                while(true) {
+                    System.out.println("Enter a number between 0 and 50");
+                    userRandomNumber = sc.nextInt();
+                    boolean truthCondition = inputValidator.numberValidator(userRandomNumber, 0, 50);
+                    if(truthCondition) {
+                        break;
+                    }
+                }
 
                 int randomInt = (int) (Math.random()*10);
 
