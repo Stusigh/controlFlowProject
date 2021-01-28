@@ -56,12 +56,12 @@ public class controlFlowProject {
                     }
                 }
 
-                int randomInt = (int) (Math.random()*100);
-                int randomIntTwo = (int) (Math.random()*100);
+                int randomInt = (int) (Math.random()*10);
+                int randomIntTwo = (int) (Math.random()*10);
 
                 int magicBall = (randomInt * userLuckyNumber)/randomIntTwo;
                 int lotteryNumberOne = userPetName.charAt(2) - 65;
-                int lotteryNumberTwo = (((userMakeCarNumber + userLuckyNumber))/randomInt)-userFavActor.charAt(6);
+                int lotteryNumberTwo = (((userMakeCarNumber + userLuckyNumber))/randomInt)/userFavActor.charAt(1);
                 int lotteryNumberThree = (42 * randomInt)/randomIntTwo;
                 int lotteryNumberFour = userRandomNumber + 15;
                 int lotteryNumberFive = userFavPolitical.charAt(1) - 65;
