@@ -1,11 +1,10 @@
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 import java.lang.Math;
 
 public class controlFlowProject {
 
     public static void main(String[] args) {
+
 
         asciiChars.printNumbers();
         asciiChars.printLowerCase();
@@ -131,6 +130,8 @@ public class controlFlowProject {
 
                 System.out.println("Lottery numbers: " + lotteryNumberOne + ", " + lotteryNumberTwo + ", " + lotteryNumberThree + ", " + lotteryNumberFour + ", " + lotteryNumberFive + " Magic Ball: " + magicBall);
                 System.out.println("Sorted first five numbers are " + finalLotteryNumbers);
+                Set<Integer> lotteryNumbersAsSet = new HashSet<>(finalLotteryNumbers);
+                System.out.println("Lottery numbers with no duplicates: " + lotteryNumbersAsSet);
                 sc = new Scanner(System.in);
                 System.out.println("Would you like to answer these questions again to generate more numbers? Yes or No.");
                 quitOrNot = sc.nextLine();
