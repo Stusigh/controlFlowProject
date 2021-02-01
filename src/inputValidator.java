@@ -7,9 +7,9 @@ public class inputValidator {
             return true;
         }
     }
-    static boolean stringValidator(String stringToValidate) {
-        if (stringToValidate.length() == 0 || stringToValidate.length() > 20) {
-            System.out.println("This name is invalid. Please enter a name under 20 characters long.");
+    static boolean stringValidator(String stringToValidate, int min) {
+        if (stringToValidate.length() < min || stringToValidate.length() > 20) {
+            System.out.println("This name is invalid. Please enter a name longer than " + 3 + " characters and under 20 characters long.");
             return false;
         } else {
             return true;

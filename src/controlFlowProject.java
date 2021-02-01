@@ -23,8 +23,18 @@ public class controlFlowProject {
                 ArrayList<Integer> userInputNumbers = new ArrayList<>(4);
                 ArrayList<String> userInputStrings = new ArrayList<>(3);
 
-                System.out.println("What is the name of your favourite pet?");
-                userInputStrings.add(sc.nextLine());
+
+
+
+                while(true) {
+                    System.out.println("What is the name of your favourite pet?");
+                    String stringUserInput = sc.nextLine();
+                    boolean truthCondition = inputValidator.stringValidator(stringUserInput, 3);
+                    if(truthCondition) {
+                        userInputStrings.add(stringUserInput);
+                        break;
+                    }
+                }
 
 
                 System.out.println("What is the first name of your favourite actor?");
@@ -125,12 +135,12 @@ public class controlFlowProject {
                         add(lotteryNumberFive);
                     }
                 };
-                Collections.sort(finalLotteryNumbers);
+                Collections.sort(finalLotteryNumbers); // sorted numbers
 
 
                 System.out.println("Lottery numbers: " + lotteryNumberOne + ", " + lotteryNumberTwo + ", " + lotteryNumberThree + ", " + lotteryNumberFour + ", " + lotteryNumberFive + " Magic Ball: " + magicBall);
                 System.out.println("Sorted first five numbers are " + finalLotteryNumbers);
-                Set<Integer> lotteryNumbersAsSet = new HashSet<>(finalLotteryNumbers);
+                Set<Integer> lotteryNumbersAsSet = new HashSet<>(finalLotteryNumbers); //removing duplicates
                 System.out.println("Lottery numbers with no duplicates: " + lotteryNumbersAsSet);
                 sc = new Scanner(System.in);
                 System.out.println("Would you like to answer these questions again to generate more numbers? Yes or No.");
@@ -138,12 +148,8 @@ public class controlFlowProject {
                 if (!(quitOrNot.equals("Yes") || quitOrNot.equals("yes") || quitOrNot.equals("y") || quitOrNot.equals("Y"))) {
                     sc.close();
                     System.exit(0);}
-
             }
-
         }
-
-
     }
 }
 
